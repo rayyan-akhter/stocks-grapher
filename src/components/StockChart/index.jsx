@@ -53,7 +53,7 @@ const StockChart = ({ stockData, dayKey }) => {
       plugins: {
         title: {
           display: true,
-          text: `Chart.js Line Chart - Multi Axis (${selectedData} Data)`, // Display selectedData in the heading
+          text: `Chart.js Line Chart - Multi Axis (${selectedData} Data)`, 
         },
       },
       scales: {

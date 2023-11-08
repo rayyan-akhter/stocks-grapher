@@ -2,7 +2,6 @@ import React from "react";
 import StockChart from "./components/StockChart";
 import "../src/App.css";
 
-// Import your stock data here
 import * as aapl from "../src/assets/aapl";
 import * as amzn from "../src/assets/amzn";
 import * as meta from "../src/assets/meta";
