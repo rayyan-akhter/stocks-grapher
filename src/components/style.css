@@ -1,0 +1,47 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.chart-container{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  /* height: 100vh; */
+}
+.chart{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 600px;
+}
+.stocks-Info{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.stock-Prices{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.stocks{
+    display: flex;
+    flex-direction: column;
+  
+}
+.stock-name{
+    height: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.stock-name p{
+    font-size:large;
+    
+}
+.stocks-percentage{
+    font-size: small;
+    font-style: italic;
+}
