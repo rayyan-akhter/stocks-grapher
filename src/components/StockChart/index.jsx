@@ -1,21 +1,48 @@
-import React, { useRef, useState } from "react";
 import { Chart, registerables } from "chart.js";
+import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 import "./style.css";
 
 Chart.register(...registerables);
 
 const StockChart = ({ stockData, dayKey }) => {
+  
   const [selectedData, setSelectedData] = useState(dayKey);
   const [selectedDataName, setSelectedDataName] = useState("Day");
-  
-  const chartRef = useRef(null);
+  // const apiKey =  "API_KEY";
+  // const intervals = ['1min', '1day', '1week', '1month'];
+  // const [selectdInterval,setSelectedInterval] =  useState("1min");
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const dataPromises = intervals.map(async (intervals) => {
+  //       try {
+  //         const response = await fetch(`https://api.twelvedata.com/time_series?symbol=AAPL&interval=${selectdInterval}&apikey=${apiKey}`,options);
+  //         if (response.ok) {
+  //           const data = await response.json();
+  //           return { [intervals]: data };
+  //         } else {
+  //           console.error(`Failed to fetch data for ${ticker}`);
+  //         }
+  //       } catch (error) {
+  //         console.error(`Error fetching data for ${ticker}:`, error);
+  //       }intervals
+  //     });
+
+  //     const stockData = Object.assign({}, ...await Promise.all(dataPromises));
+  //     here wi will set the intervels || update the interval
+    // setSelectedInterval(interval);
+
+  //   };
+
+  //   fetchData();
+  // }, [stateForInterval]);
 
   const toggleData = (option,name) => {
-    
     setSelectedData(option);
     setSelectedDataName(name);
   };
+
+  
 
   const stockDataArray = stockData.map((obj) => obj[selectedData]);
 
@@ -91,7 +118,7 @@ const StockChart = ({ stockData, dayKey }) => {
         </div>
         {stockDataArray[0].values ? (
           <div className="stocks-graph">
-            <Line ref={chartRef} data={chartData} options={config} />
+            <Line  data={chartData} options={config} />
           </div>
         ) : (
           <p>Data not available for the selected stock</p>
